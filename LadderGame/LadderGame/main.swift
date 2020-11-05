@@ -7,8 +7,6 @@
 
 import Foundation
 
-print("인원수를 입력해주세요")
-
 func printLadder(participant: String?, height: Int) {
     let participantNum = Int(participant!)!
     var resultLadder = Array(repeating: Array(repeating: "|", count: participantNum * 2 - 1), count: height)
@@ -26,4 +24,9 @@ func printLadder(participant: String?, height: Int) {
     }
 }
 
-printLadder(participant: readLine(), height: 4)
+while var participantNum = readLine() {
+    guard Int(participantNum)! <= 2 || Int(participantNum)! <= 8 else {
+        break
+    }
+    printLadder(participant: participantNum, height: 4)
+}
