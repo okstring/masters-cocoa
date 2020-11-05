@@ -7,26 +7,38 @@
 
 import Foundation
 
-func printLadder(participant: String?, height: Int) {
-    let participantNum = Int(participant!)!
-    var resultLadder = Array(repeating: Array(repeating: "|", count: participantNum * 2 - 1), count: height)
+struct LadderGame {
+    typealias Ladder = Array<Array<String>>
     
-    for rowIndex in 0..<height {
-        for columnIndex in 0..<participantNum * 2 - 1 {
-            if columnIndex % 2 == 1 && Int.random(in: 0...1) == 1 {
-                resultLadder[rowIndex][columnIndex] = "-"
-            } else if columnIndex % 2 == 1 {
-                resultLadder[rowIndex][columnIndex] = " "
+    func drawLadder(participant: String?, height: Int) -> Ladder {
+        let participantNum = Int(participant!)!
+        var resultLadder = Array(repeating: Array(repeating: "|", count: participantNum * 2 - 1), count: height)
+        
+        for rowIndex in 0..<height {
+            for columnIndex in 0..<participantNum * 2 - 1 {
+                if columnIndex % 2 == 1 && Int.random(in: 0...1) == 1 {
+                    resultLadder[rowIndex][columnIndex] = "-"
+                } else if columnIndex % 2 == 1 {
+                    resultLadder[rowIndex][columnIndex] = " "
+                }
             }
-            print(resultLadder[rowIndex][columnIndex], terminator: "")
+        }
+        return resultLadder
+    }
+    
+    func printLadder(ladder: Ladder) {
+        for (index, _) in ladder.enumerated() {
+            print(ladder[index].joined())
         }
         print()
     }
 }
 
-while var participantNum = readLine() {
+var ladderGame = LadderGame()
+while let participantNum = readLine() {
     guard Int(participantNum)! <= 2 || Int(participantNum)! <= 8 else {
         break
     }
-    printLadder(participant: participantNum, height: 4)
+    var resultLadder = ladderGame.drawLadder(participant: participantNum, height: 4)
+    ladderGame.printLadder(ladder: resultLadder)
 }
