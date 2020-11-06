@@ -11,6 +11,7 @@
 		79F3D7002554D80500093606 /* p1000.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F3D6FF2554D80500093606 /* p1000.swift */; };
 		79F3D7032554DE1D00093606 /* p1008.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F3D7022554DE1D00093606 /* p1008.swift */; };
 		79F3D7062554E1C900093606 /* p2438.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F3D7052554E1C900093606 /* p2438.swift */; };
+		79F3D7092554E38200093606 /* p2920.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F3D7082554E38200093606 /* p2920.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +32,7 @@
 		79F3D6FF2554D80500093606 /* p1000.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = p1000.swift; sourceTree = "<group>"; };
 		79F3D7022554DE1D00093606 /* p1008.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = p1008.swift; sourceTree = "<group>"; };
 		79F3D7052554E1C900093606 /* p2438.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = p2438.swift; sourceTree = "<group>"; };
+		79F3D7082554E38200093606 /* p2920.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = p2920.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				79F3D6FF2554D80500093606 /* p1000.swift */,
 				79F3D7022554DE1D00093606 /* p1008.swift */,
 				79F3D7052554E1C900093606 /* p2438.swift */,
+				79F3D7082554E38200093606 /* p2920.swift */,
 			);
 			path = "Friday-algorithm";
 			sourceTree = "<group>";
@@ -132,6 +135,7 @@
 				79F3D7032554DE1D00093606 /* p1008.swift in Sources */,
 				79F3D7002554D80500093606 /* p1000.swift in Sources */,
 				79F3D7062554E1C900093606 /* p2438.swift in Sources */,
+				79F3D7092554E38200093606 /* p2920.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
