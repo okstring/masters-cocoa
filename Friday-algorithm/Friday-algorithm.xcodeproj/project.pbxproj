@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		79F3D6F82554D74B00093606 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F3D6F72554D74B00093606 /* main.swift */; };
 		79F3D7002554D80500093606 /* p1000.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F3D6FF2554D80500093606 /* p1000.swift */; };
+		79F3D7032554DE1D00093606 /* p1008.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F3D7022554DE1D00093606 /* p1008.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,6 +28,7 @@
 		79F3D6F42554D74B00093606 /* Friday-algorithm */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Friday-algorithm"; sourceTree = BUILT_PRODUCTS_DIR; };
 		79F3D6F72554D74B00093606 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		79F3D6FF2554D80500093606 /* p1000.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = p1000.swift; sourceTree = "<group>"; };
+		79F3D7022554DE1D00093606 /* p1008.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = p1008.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 			children = (
 				79F3D6F72554D74B00093606 /* main.swift */,
 				79F3D6FF2554D80500093606 /* p1000.swift */,
+				79F3D7022554DE1D00093606 /* p1008.swift */,
 			);
 			path = "Friday-algorithm";
 			sourceTree = "<group>";
@@ -123,6 +126,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				79F3D6F82554D74B00093606 /* main.swift in Sources */,
+				79F3D7032554DE1D00093606 /* p1008.swift in Sources */,
 				79F3D7002554D80500093606 /* p1000.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
