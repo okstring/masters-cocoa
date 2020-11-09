@@ -13,14 +13,13 @@ struct RegexPractice {
     }
         
     func isThreeduplicateNumbers(str: String) -> Bool {
-        let pattern = "[1]{3}|[2]{3}|[3]{3}|[4]{3}|[5]{3}|[6]{3}|[7]{3}|[8]{3}|[9]{3}|[0]{3}"
-        let regex = try! NSRegularExpression(pattern:pattern, options:[])
-        let range = NSRange(location: 0, length: str.utf16.count)
-        let n = regex.firstMatch(in: str, options: [], range: range)
-        if n == nil {
-            return true
+        let tempArr = Array(str)
+        for index in 2..<tempArr.count {
+            if tempArr[index - 2] == tempArr[index - 1] && tempArr[index - 1] == tempArr[index] && tempArr[index - 0] == tempArr[index - 2] {
+                return false
+            }
         }
-        return false
+        return true
     }
         
     func isThreeConsecutiveNumbers (str: String) -> Bool {
@@ -34,15 +33,16 @@ struct RegexPractice {
     }
         
     func IDValidator(password: String) -> Bool {
-        if isPossibleCharacter(str: password) == false {
+        guard isPossibleCharacter(str: password) else {
             return false
-        } else if isThreeduplicateNumbers(str: password) == false {
-            return false
-        } else if isThreeConsecutiveNumbers(str: password) == false {
-            return false
-        } else {
-            return true
         }
+        guard isThreeduplicateNumbers(str: password) else {
+            return false
+        }
+        guard isThreeConsecutiveNumbers(str: password) else {
+            return false
+        }
+        return true
     }
     
     func isVeryWeakPassword(password: String) -> Bool {
