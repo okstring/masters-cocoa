@@ -7,7 +7,7 @@ var boolArray = myArray.setBoolArray()
 myArray.printArray(array: boolArray, newChar: "$")
 
 // 연습문제 1-3
-var magicSquare = myArray.makeMagicSquare(row: 5)
+var magicSquare = myArray.makeMagicSquare(row: 7)
 myArray.printMagicSquare(array: magicSquare)
 
 

@@ -30,26 +30,7 @@ struct ArrayPractice {
         arrayInInt = Array(repeating: Array(repeating: 0, count: row), count: row)
         var rowIndex = Int.random(in: (0...row - 1))
         var colIndex: Int
-        if row == 3 {
-            if rowIndex == 2 {
-                colIndex = 0
-            } else {
-                colIndex = rowIndex + 1
-            }
-            var num = 1
-            while num <= 9 {
-                arrayInInt[rowIndex][colIndex] = num
-                rowIndex += 1
-                colIndex += 1
-                if num % 3 == 0 {
-                    rowIndex -= 1
-                }
-                if rowIndex == 3 { rowIndex = 0 }
-                if colIndex == 3 { colIndex = 0 }
-                num += 1
-            }
-        }
-        else if row == 5 {
+        if row == 5 {
             colIndex = rowIndex - 3
             if colIndex < 0 {
                 colIndex = 5 + colIndex
@@ -67,6 +48,27 @@ struct ArrayPractice {
                 colIndex += 1
                 if rowIndex == -1 { rowIndex = 4 }
                 if colIndex == 5 { colIndex = 0 }
+                num += 1
+            }
+        }
+        else {
+            if rowIndex == 0 {
+                colIndex = row - 1
+            } else {
+                colIndex = rowIndex - 1
+            }
+            var num = 1
+            while num <= row * row {
+                arrayInInt[rowIndex][colIndex] = num
+                if num % row == 0 {
+                    rowIndex -= 1
+                } else {
+                    rowIndex += 1
+                    colIndex -= 1
+                }
+                if rowIndex == row { rowIndex = 0 }
+                if rowIndex == -1 { rowIndex = row - 1 }
+                if colIndex == -1 { colIndex = row - 1 }
                 num += 1
             }
         }
