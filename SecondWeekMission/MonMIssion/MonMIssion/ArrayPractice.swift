@@ -48,7 +48,8 @@ struct ArrayPractice {
                 if colIndex == 3 { colIndex = 0 }
                 num += 1
             }
-        } else if row == 5 {
+        }
+        else if row == 5 {
             colIndex = rowIndex - 3
             if colIndex < 0 {
                 colIndex = 5 + colIndex

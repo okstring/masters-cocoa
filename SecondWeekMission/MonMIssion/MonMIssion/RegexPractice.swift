@@ -1,8 +1,14 @@
 import Foundation
 
 struct RegexPractice {
-    func isPossibleCharacter (str: String) -> Bool {
-        let pattern = "[A-Za-z0-9\\-]{5,23}"
+    let possibleCharacterPattern = "[A-Za-z0-9\\-]{5,23}"
+    let veryWeakPasswordPattern = "^[0-9]{0,7}$"
+    let weakPasswordPattern = "^(?=.*[0-9])(?=.*[A-Za-z])[A-Za-z0-9]{8,}$"
+    let strongPasswordPattern = "^(?=.*[0-9])(?=.*[A-Za-z])[A-Za-z0-9]{8,}$"
+    let veryStrongPasswordPattern = "^((?=.*[0-9])(?=.*[A-Za-z])(?=.*[\\!\\@\\#\\$\\%\\^\\*\\(\\)\\-\\_\\=\\+\\|\\[\\]\\{\\}\\;\\:\\'\"\\,\\.\\<\\>\\/\\?])).{8,}$"
+    
+    func isRegexFirstMatch(str: String, pattern: String) -> Bool {
+        let pattern = pattern
         let regex = try! NSRegularExpression(pattern:pattern, options:[])
         let range = NSRange(location: 0, length: str.utf16.count)
         let n = regex.firstMatch(in: str, options: [], range: range)
@@ -11,7 +17,7 @@ struct RegexPractice {
         }
         return true
     }
-        
+    
     func isThreeduplicateNumbers(str: String) -> Bool {
         let tempArr = Array(str)
         for index in 2..<tempArr.count {
@@ -33,57 +39,13 @@ struct RegexPractice {
     }
         
     func IDValidator(password: String) -> Bool {
-        guard isPossibleCharacter(str: password) else {
+        guard isRegexFirstMatch(str: password, pattern: possibleCharacterPattern) else {
             return false
         }
         guard isThreeduplicateNumbers(str: password) else {
             return false
         }
         guard isThreeConsecutiveNumbers(str: password) else {
-            return false
-        }
-        return true
-    }
-    
-    func isVeryWeakPassword(password: String) -> Bool {
-        let pattern = "^[0-9]{0,7}$"
-        let regex = try! NSRegularExpression(pattern:pattern, options:[])
-        let range = NSRange(location: 0, length: password.utf16.count)
-        let n = regex.firstMatch(in: password, options: [], range: range)
-        if n == nil {
-            return false
-        }
-        return true
-    }
-    
-    func isWeakPassword(password: String) -> Bool {
-        let pattern = "^[A-Za-z]{0,7}$"
-        let regex = try! NSRegularExpression(pattern:pattern, options:[])
-        let range = NSRange(location: 0, length: password.utf16.count)
-        let n = regex.firstMatch(in: password, options: [], range: range)
-        if n == nil {
-            return false
-        }
-        return true
-    }
-    
-    func isStrongPassword(password: String) -> Bool {
-        let pattern = "^(?=.*[0-9])(?=.*[A-Za-z])[A-Za-z0-9]{8,}$"
-        let regex = try! NSRegularExpression(pattern:pattern, options:[])
-        let range = NSRange(location: 0, length: password.utf16.count)
-        let n = regex.firstMatch(in: password, options: [], range: range)
-        if n == nil {
-            return false
-        }
-        return true
-    }
-    
-    func isVeryStrongPassword(password: String) -> Bool {
-        let pattern = "^((?=.*[0-9])(?=.*[A-Za-z])(?=.*[\\!\\@\\#\\$\\%\\^\\*\\(\\)\\-\\_\\=\\+\\|\\[\\]\\{\\}\\;\\:\\'\"\\,\\.\\<\\>\\/\\?])).{8,}$"
-        let regex = try! NSRegularExpression(pattern:pattern, options:[])
-        let range = NSRange(location: 0, length: password.utf16.count)
-        let n = regex.firstMatch(in: password, options: [], range: range)
-        if n == nil {
             return false
         }
         return true
@@ -107,13 +69,13 @@ struct RegexPractice {
     }
     
     func passwordValidator(password: String) -> Int {
-        if isVeryWeakPassword(password: password) {
+        if isRegexFirstMatch(str: password, pattern: veryWeakPasswordPattern) {
             return 1
-        } else if isWeakPassword(password: password) {
+        } else if isRegexFirstMatch(str: password, pattern: weakPasswordPattern) {
             return 2
-        } else if isStrongPassword(password: password) {
+        } else if isRegexFirstMatch(str: password, pattern: strongPasswordPattern) {
             return 4
-        } else if isVeryStrongPassword(password: password) {
+        } else if isRegexFirstMatch(str: password, pattern: veryStrongPasswordPattern) {
             return 5
         } else {
             return 3
