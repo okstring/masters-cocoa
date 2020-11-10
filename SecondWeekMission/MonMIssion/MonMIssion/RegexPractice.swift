@@ -3,7 +3,7 @@ import Foundation
 struct RegexPractice {
     let possibleCharacterPattern = "[A-Za-z0-9\\-]{5,23}"
     let veryWeakPasswordPattern = "^[0-9]{0,7}$"
-    let weakPasswordPattern = "^(?=.*[0-9])(?=.*[A-Za-z])[A-Za-z0-9]{8,}$"
+    let weakPasswordPattern = "^[A-Za-z]{0,7}$"
     let strongPasswordPattern = "^(?=.*[0-9])(?=.*[A-Za-z])[A-Za-z0-9]{8,}$"
     let veryStrongPasswordPattern = "^((?=.*[0-9])(?=.*[A-Za-z])(?=.*[\\!\\@\\#\\$\\%\\^\\*\\(\\)\\-\\_\\=\\+\\|\\[\\]\\{\\}\\;\\:\\'\"\\,\\.\\<\\>\\/\\?])).{8,}$"
     

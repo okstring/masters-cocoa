@@ -10,9 +10,6 @@ struct OtherMission {
                 previousNum = inputArray[0]
                 previousCount = 0
             }
-            if index == inputArray.endIndex {
-                
-            }
             if previousNum == value {
                 previousCount += 1
                 if index == inputArray.endIndex - 1 {

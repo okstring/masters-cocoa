@@ -19,7 +19,7 @@ var regexPractice = RegexPractice()
 print(regexPractice.IDValidator(password: "asdgasdf"))
 
 // 연습문제 3
-print(regexPractice.passwordValidator(password: "asdfljhd"))
+print(regexPractice.passwordValidator(password: "asdflj12hasdd"))
 
 // 연습문제 4
 print(regexPractice.isNationalIdectificationNumber(number: "1234561122330"))
