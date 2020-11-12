@@ -21,8 +21,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func passwordTyping(_ sender: UITextField) {
-        let checkPassword = CheckPassword()
-        switch checkPassword.deriveLevel(password: sender.text ?? "") {
+        var checkPassword = CheckPassword()
+        switch checkPassword.examinePassword(password: sender.text ?? "") {
         case 1:
             levelView.backgroundColor = UIColor.red
             descriptionLabel.text = "아주 약한 암호"
@@ -43,9 +43,5 @@ class ViewController: UIViewController {
             descriptionLabel.text = "암호를 입력해주세요"
         }
     }
-    
-    
-    
-    
 }
 
