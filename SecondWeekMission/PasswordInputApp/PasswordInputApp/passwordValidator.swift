@@ -10,6 +10,7 @@ struct CheckPassword {
     
     
     func deriveLevel(password: String) -> Int {
+        // alphabet, number, specialCharacter, limitLength
         switch examine {
         case (false, false, true, false):
             return 1

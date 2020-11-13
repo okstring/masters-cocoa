@@ -20,9 +20,9 @@ class ViewController: UIViewController {
         recommendPasswordLabel.text = "추천 암호: \(makePassword.makeStrongPassword())"
     }
     
-    @IBAction func passwordTyping(_ sender: UITextField) {
+    @IBAction func clickButton(_ sender: UIButton) {
         var checkPassword = CheckPassword()
-        switch checkPassword.examinePassword(password: sender.text ?? "") {
+        switch checkPassword.examinePassword(password: passwordInput.text ?? "") {
         case 1:
             levelView.backgroundColor = UIColor.red
             descriptionLabel.text = "아주 약한 암호"
