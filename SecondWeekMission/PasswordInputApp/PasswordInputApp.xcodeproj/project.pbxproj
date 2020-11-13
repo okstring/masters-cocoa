@@ -14,6 +14,7 @@
 		79141811255B8EBF008A2D37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79141810255B8EBF008A2D37 /* Assets.xcassets */; };
 		79141814255B8EBF008A2D37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79141812255B8EBF008A2D37 /* LaunchScreen.storyboard */; };
 		79141821255B912C008A2D37 /* passwordValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79141820255B912C008A2D37 /* passwordValidator.swift */; };
+		79AEFA19255ED9F0007E0F9F /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AEFA18255ED9F0007E0F9F /* ActionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		79141813255B8EBF008A2D37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		79141815255B8EBF008A2D37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79141820255B912C008A2D37 /* passwordValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = passwordValidator.swift; sourceTree = "<group>"; };
+		79AEFA18255ED9F0007E0F9F /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				79141807255B8EBB008A2D37 /* AppDelegate.swift */,
 				79141809255B8EBB008A2D37 /* SceneDelegate.swift */,
 				7914180B255B8EBB008A2D37 /* ViewController.swift */,
+				79AEFA18255ED9F0007E0F9F /* ActionViewController.swift */,
 				79141820255B912C008A2D37 /* passwordValidator.swift */,
 				7914180D255B8EBB008A2D37 /* Main.storyboard */,
 				79141810255B8EBF008A2D37 /* Assets.xcassets */,
@@ -141,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7914180C255B8EBB008A2D37 /* ViewController.swift in Sources */,
+				79AEFA19255ED9F0007E0F9F /* ActionViewController.swift in Sources */,
 				79141808255B8EBB008A2D37 /* AppDelegate.swift in Sources */,
 				7914180A255B8EBB008A2D37 /* SceneDelegate.swift in Sources */,
 				79141821255B912C008A2D37 /* passwordValidator.swift in Sources */,
