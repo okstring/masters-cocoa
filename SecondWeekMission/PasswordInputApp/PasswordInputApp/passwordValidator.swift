@@ -1,20 +1,18 @@
 import Foundation
 
 struct CheckPassword {
-
     var examine = (alphabet: true, number: true, specialCharacter: true, limitLength: true)
     let alphabets = CharacterSet.letters
     let numbers = CharacterSet.decimalDigits
     let specialCharacters = CharacterSet(charactersIn: "*[!@#$%^*()-_=+|[]{};:',.<>/?]")
     let limitLength = 8
     
-    
     func deriveLevel(password: String) -> Int {
         // alphabet, number, specialCharacter, limitLength
         switch examine {
-        case (false, false, true, false):
-            return 1
         case (false, true, false, false):
+            return 1
+        case (true, false, false, false):
             return 2
         case (true, true, true, false):
             return 4
@@ -41,7 +39,6 @@ struct CheckPassword {
         print(examine)
         return deriveLevel(password: password)
     }
-    
     func makePartStrongPassword() -> String {
         let randomStrings = ["abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ", "0123456789", "!@#$%^*()-_=+|[]{};:'\",.<>/?"]
 

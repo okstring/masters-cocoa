@@ -1,25 +1,24 @@
 import Foundation
 
-struct RegexPractice {
-    let possibleCharacterPattern = "[A-Za-z0-9\\-]{5,23}"
-    let veryWeakPasswordPattern = "^[0-9]{0,7}$"
-    let weakPasswordPattern = "^[A-Za-z]{0,7}$"
-    let strongPasswordPattern = "^(?=.*[0-9])(?=.*[A-Za-z])[A-Za-z0-9]{8,}$"
-    let veryStrongPasswordPattern = "^((?=.*[0-9])(?=.*[A-Za-z])(?=.*[\\\\\\!\\@\\#\\$\\%\\^\\*\\(\\)\\-\\_\\=\\+\\|\\[\\]\\{\\}\\;\\:\\'\"\\,\\.\\<\\>\\/\\?])).{8,}$"
+struct FilterCharacter {
+    var examine = (alphabet: true, number: true, specialCharacter: true, limitLength: true)
+    let alphabets = CharacterSet.letters
+    let numbers = CharacterSet.decimalDigits
+    let specialCharacters = CharacterSet(charactersIn: "*[!@#$%^*()-_=+|[]{};:',.<>/?]")
+    let limitLength = 8
     
-    func isRegexFirstMatch(str: String, pattern: String) -> Bool {
-        let pattern = pattern
-        let regex = try! NSRegularExpression(pattern:pattern, options:[])
-        let range = NSRange(location: 0, length: str.utf16.count)
-        let n = regex.firstMatch(in: str, options: [], range: range)
-        if n == nil {
-            return false
-        }
-        return true
+    private func isCharacterCount(for ID: String) -> Bool {
+        return ID.count >= 5 && ID.count < 24
     }
     
-    func isThreeduplicateNumbers(str: String) -> Bool {
-        let tempArr = Array(str)
+    private func isUnicodeAndNumber(for ID: String) -> Bool {
+        var filterSet = CharacterSet.letters
+        filterSet.insert(charactersIn: "-0123456789")
+        return ID.rangeOfCharacter(from: filterSet) != nil ? true : false
+    }
+    
+    private func isThreeNonContinued(for ID: String) -> Bool {
+        let tempArr = Array(ID)
         for index in 2..<tempArr.count {
             if tempArr[index - 2] == tempArr[index - 1] && tempArr[index - 1] == tempArr[index] && tempArr[index - 0] == tempArr[index - 2] {
                 return false
@@ -27,28 +26,52 @@ struct RegexPractice {
         }
         return true
     }
-        
-    func isThreeConsecutiveNumbers (str: String) -> Bool {
+    
+    private func isThreeNonConsecutiveNumbers (for ID: String) -> Bool {
         let consecutiveNumberArr = ["123", "234", "345", "456", "567", "678", "789", "890", "901", "012"]
         for compareValue in consecutiveNumberArr {
-            if str.contains(compareValue) {
+            if ID.contains(compareValue) {
                 return false
             }
         }
         return true
     }
-        
-    func IDValidator(password: String) -> Bool {
-        guard isRegexFirstMatch(str: password, pattern: possibleCharacterPattern) else {
-            return false
+    
+    func IDValidator(ID: String) -> Bool {
+        return isCharacterCount(for: ID) && isUnicodeAndNumber(for: ID) && isThreeNonContinued(for: ID) && isThreeNonConsecutiveNumbers(for: ID)
+    }
+    
+    func deriveLevel(password: String) -> Int {
+        // alphabet, number, specialCharacter, limitLength
+        switch examine {
+        case (false, true, false, false):
+            return 1
+        case (true, false, false, false):
+            return 2
+        case (true, true, true, false):
+            return 4
+        case (true, true, true, true):
+            return 5
+        default:
+            return 3
         }
-        guard isThreeduplicateNumbers(str: password) else {
-            return false
+    }
+    
+    mutating func examinePassword(password: String) -> Int {
+        if password.rangeOfCharacter(from: alphabets) == nil {
+            examine.alphabet = false
         }
-        guard isThreeConsecutiveNumbers(str: password) else {
-            return false
+        if password.rangeOfCharacter(from: numbers) == nil {
+            examine.number = false
         }
-        return true
+        if password.rangeOfCharacter(from: specialCharacters) == nil {
+            examine.specialCharacter = false
+        }
+        if password.count < 8 {
+            examine.limitLength = false
+        }
+        print(examine)
+        return deriveLevel(password: password)
     }
     
     func isNationalIdectificationNumber(number: String) -> Bool {
@@ -66,19 +89,5 @@ struct RegexPractice {
             return true
         }
         return false
-    }
-    
-    func passwordValidator(password: String) -> Int {
-        if isRegexFirstMatch(str: password, pattern: veryWeakPasswordPattern) {
-            return 1
-        } else if isRegexFirstMatch(str: password, pattern: weakPasswordPattern) {
-            return 2
-        } else if isRegexFirstMatch(str: password, pattern: strongPasswordPattern) {
-            return 4
-        } else if isRegexFirstMatch(str: password, pattern: veryStrongPasswordPattern) {
-            return 5
-        } else {
-            return 3
-        }
     }
 }

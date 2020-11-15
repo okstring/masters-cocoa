@@ -14,15 +14,15 @@ myArray.printMagicSquare(array: magicSquare)
 print(String(repeating: "-", count: 10))
 
 
-var regexPractice = RegexPractice()
+var filterCharacter = FilterCharacter()
 // 연습문제 2
-print(regexPractice.IDValidator(password: "asdgasdf"))
+print(filterCharacter.IDValidator(ID: "lsdfhgknepo"))
 
 // 연습문제 3
-print(regexPractice.passwordValidator(password: "asdflj12hasdd"))
+print(filterCharacter.examinePassword(password: "asdfasdff!1"))
 
-// 연습문제 4
-print(regexPractice.isNationalIdectificationNumber(number: "1234561122330"))
+//// 연습문제 4
+print(filterCharacter.isNationalIdectificationNumber(number: "1234561122330"))
 
 
 print(String(repeating: "-", count: 10))
