@@ -6,4 +6,8 @@ struct Quiz {
     mutating func getWord() -> String? {
         return wordList.popLast()
     }
+    
+    func test () {
+        
+    }
 }
