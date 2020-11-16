@@ -12,8 +12,6 @@ class ViewController: UIViewController {
     @IBOutlet var progressBar: UIProgressView!
     @IBOutlet var waitButton: UIButton!
     @IBOutlet var entranceButton: UIButton!
-    @IBOutlet var maxWaitProgressBar: UIProgressView!
-    @IBOutlet var waitGuestNumber: UILabel!
     @IBOutlet var currentGuest: UILabel!
     
     var waitProcess = WaitProcess()

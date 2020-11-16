@@ -63,10 +63,8 @@
                     <connections>
                         <outlet property="currentGuest" destination="uj7-su-zoS" id="MEf-l3-MGf"/>
                         <outlet property="entranceButton" destination="QG1-4y-RAu" id="fPy-ic-jGL"/>
-                        <outlet property="maxWaitProgressBar" destination="2Kn-rk-Q7G" id="lJK-5F-moO"/>
                         <outlet property="progressBar" destination="2Kn-rk-Q7G" id="3sh-OX-Ev8"/>
                         <outlet property="waitButton" destination="YAd-VO-A9Z" id="T8P-yd-6LY"/>
-                        <outlet property="waitGuestNumber" destination="uj7-su-zoS" id="qtK-Uf-CfT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
