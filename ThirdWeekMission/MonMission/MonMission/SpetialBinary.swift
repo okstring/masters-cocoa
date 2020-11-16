@@ -14,6 +14,7 @@ struct SpecialBinary {
     init (with total: Int) {
         for num in 0..<Int(pow(2.0, Double(total))){
             values.append(String(num, radix: 2).digitMatching(to: total))
+//            values.append(String(format: "%.\(total)d", (String(3, radix: 2) as NSString).integerValue))
         }
     }
     var count: Int {
