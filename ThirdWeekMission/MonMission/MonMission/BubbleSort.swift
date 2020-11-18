@@ -24,6 +24,7 @@ class BubbleSort {
             swapped = false
             for i in 0..<result.count - swapCounter - 1 {
                 // Ascending: >, Descending: <
+                com
                 if comparator(self.result[i], self.result[i + 1]) {
                     swapped = true
                     swap(aIndex: i, bIndex: i + 1)
