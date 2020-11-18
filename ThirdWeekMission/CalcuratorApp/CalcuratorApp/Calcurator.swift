@@ -39,6 +39,7 @@ struct Calcurator {
         case plus, minus, multiple, divide, equal
     }
     let formatter = NumberFormatter()
+    
     init() {
         formatter.numberStyle = .decimal
         formatter.maximumSignificantDigits = 18
