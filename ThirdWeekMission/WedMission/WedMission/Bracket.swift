@@ -67,7 +67,6 @@ struct Bracket {
     
     mutating func analyze(with value: String) -> Bool {
         var stack = Stack<String>()
-        let result = true
         for character in Array(value){
             if "\(character)" == paranthesisCaseArr[0] {
                 stack.push("o")
@@ -75,6 +74,6 @@ struct Bracket {
                 return false
             }
         }
-        return result
+        return stack.isEmpty() ? true : false
     }
 }
