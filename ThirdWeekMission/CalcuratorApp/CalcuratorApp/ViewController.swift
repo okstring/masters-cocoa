@@ -21,50 +21,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-    @IBAction func zero(_ sender: UIButton) {
-        calcurator.currentNumber += "0"
+    
+    
+    @IBAction func clickDigit(_ sender: UIButton) {
+        calcurator.currentNumber += sender.currentTitle ?? ""
         display.text = calcurator.displayNumber
     }
-    @IBAction func one(_ sender: UIButton) {
-        calcurator.currentNumber += "1"
-        display.text = calcurator.displayNumber
-    }
-    @IBAction func two(_ sender: UIButton) {
-        calcurator.currentNumber += "2"
-        display.text = calcurator.displayNumber
-    }
-    @IBAction func three(_ sender: UIButton) {
-        calcurator.currentNumber += "3"
-        display.text = calcurator.displayNumber
-    }
-    @IBAction func four(_ sender: UIButton) {
-        calcurator.currentNumber += "4"
-        display.text = calcurator.displayNumber
-    }
-    @IBAction func five(_ sender: UIButton) {
-        calcurator.currentNumber += "5"
-        display.text = calcurator.displayNumber
-    }
-    @IBAction func six(_ sender: UIButton) {
-        calcurator.currentNumber += "6"
-        display.text = calcurator.displayNumber
-    }
-    @IBAction func seven(_ sender: UIButton) {
-        calcurator.currentNumber += "7"
-        display.text = calcurator.displayNumber
-    }
-    @IBAction func eight(_ sender: UIButton) {
-        calcurator.currentNumber += "8"
-        display.text = calcurator.displayNumber
-    }
-    @IBAction func nine(_ sender: UIButton) {
-        calcurator.currentNumber += "9"
-        display.text = calcurator.displayNumber
-    }
-    @IBAction func dot(_ sender: UIButton) {
-        calcurator.currentNumber += "."
-        display.text = calcurator.displayNumber
-    }
+    
     @IBAction func equal(_ sender: UIButton) {
         display.text = calcurator.interCalculation(sign: .equal)
         updateStack()

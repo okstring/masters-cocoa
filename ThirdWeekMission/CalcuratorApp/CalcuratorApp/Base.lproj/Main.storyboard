@@ -42,7 +42,7 @@
                                                     <color key="titleColor" systemColor="labelColor"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="seven:" destination="BYZ-38-t0r" eventType="touchDown" id="i6o-MP-8oK"/>
+                                                    <action selector="clickDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XWD-eL-ZBI"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TQ2-PZ-tV9">
@@ -56,7 +56,7 @@
                                                     <color key="titleColor" systemColor="labelColor"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="eight:" destination="BYZ-38-t0r" eventType="touchDown" id="mQQ-5b-bxK"/>
+                                                    <action selector="clickDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eiF-cG-hLJ"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zwf-B4-J7F">
@@ -70,7 +70,7 @@
                                                     <color key="titleColor" systemColor="labelColor"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="nine:" destination="BYZ-38-t0r" eventType="touchDown" id="8am-JE-wOH"/>
+                                                    <action selector="clickDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0sS-rc-4ob"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NKl-sD-Jdi">
@@ -81,7 +81,7 @@
                                                     <color key="titleColor" systemColor="labelColor"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="divide:" destination="BYZ-38-t0r" eventType="touchDown" id="JKR-0Z-Cjd"/>
+                                                    <action selector="divide:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8OJ-sB-wSe"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -104,7 +104,7 @@
                                                     <color key="titleColor" systemColor="labelColor"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="four:" destination="BYZ-38-t0r" eventType="touchDown" id="aEL-Lh-ihI"/>
+                                                    <action selector="clickDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Od1-IX-hdQ"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wwu-BL-0VA">
@@ -118,7 +118,7 @@
                                                     <color key="titleColor" systemColor="labelColor"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="five:" destination="BYZ-38-t0r" eventType="touchDown" id="lnt-IM-NK3"/>
+                                                    <action selector="clickDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zlq-6f-UJP"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jz1-u0-tJh">
@@ -132,7 +132,7 @@
                                                     <color key="titleColor" systemColor="labelColor"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="six:" destination="BYZ-38-t0r" eventType="touchDown" id="8dU-qC-Imk"/>
+                                                    <action selector="clickDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NMm-nh-bmj"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zft-Fj-OeL">
@@ -146,7 +146,7 @@
                                                     <color key="titleColor" systemColor="labelColor"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="multiple:" destination="BYZ-38-t0r" eventType="touchDown" id="13z-Kw-Xit"/>
+                                                    <action selector="multiple:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Agy-0P-9sT"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -168,7 +168,7 @@
                                                     <color key="titleColor" systemColor="labelColor"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="one:" destination="BYZ-38-t0r" eventType="touchDown" id="njK-pl-ZNk"/>
+                                                    <action selector="clickDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Aav-cR-XXy"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h7C-Mz-ndG">
@@ -182,7 +182,7 @@
                                                     <color key="titleColor" systemColor="labelColor"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="two:" destination="BYZ-38-t0r" eventType="touchDown" id="oEG-RH-LT5"/>
+                                                    <action selector="clickDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="deg-sX-6w3"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zzb-hP-zvJ">
@@ -196,7 +196,7 @@
                                                     <color key="titleColor" systemColor="labelColor"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="three:" destination="BYZ-38-t0r" eventType="touchDown" id="rfa-8e-kTo"/>
+                                                    <action selector="clickDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kSh-r2-mR6"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4BG-ea-dBb">
@@ -210,7 +210,7 @@
                                                     <color key="titleColor" systemColor="labelColor"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="minus:" destination="BYZ-38-t0r" eventType="touchDown" id="7zx-bS-dDZ"/>
+                                                    <action selector="minus:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ixr-Mx-70O"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -232,7 +232,7 @@
                                                     <color key="titleColor" systemColor="labelColor"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="zero:" destination="BYZ-38-t0r" eventType="touchDown" id="YTR-nK-JzT"/>
+                                                    <action selector="clickDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dvu-hz-Q9T"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W4R-7j-ugw">
@@ -246,7 +246,7 @@
                                                     <color key="titleColor" systemColor="labelColor"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="dot:" destination="BYZ-38-t0r" eventType="touchDown" id="bEb-2X-9jn"/>
+                                                    <action selector="clickDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="f8u-da-kTU"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0PI-hE-2oP">
@@ -260,7 +260,7 @@
                                                     <color key="titleColor" systemColor="labelColor"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="equal:" destination="BYZ-38-t0r" eventType="touchDown" id="xmv-eJ-uza"/>
+                                                    <action selector="equal:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D3q-dc-6XN"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i0L-41-5xj">
@@ -274,7 +274,7 @@
                                                     <color key="titleColor" systemColor="labelColor"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="plus:" destination="BYZ-38-t0r" eventType="touchDown" id="68Y-P4-9ZM"/>
+                                                    <action selector="plus:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2hZ-8h-q7z"/>
                                                 </connections>
                                             </button>
                                         </subviews>
