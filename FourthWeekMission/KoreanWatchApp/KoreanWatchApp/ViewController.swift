@@ -12,11 +12,11 @@ class ViewController: UIViewController {
     @IBOutlet var seconds: UILabel!
     @IBOutlet var verticalStackView: UIStackView!
     override func viewDidLoad() {
-        let clock = DispatchWorkItem {
+        let tictic = DispatchWorkItem {
             _ = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.callback), userInfo: nil, repeats: true)
         }
         
-        DispatchQueue.main.async(execute: clock)
+        DispatchQueue.main.async(execute: tictic)
     }
     
     var brain = WatchBrain()
@@ -37,13 +37,13 @@ class ViewController: UIViewController {
             }
         }
         
-        UIView.animate(withDuration: 0.5, animations: {
-            self.seconds.alpha = 0.5
-        })
-        UIView.animate(withDuration: 0.5, animations: {
-            self.seconds.alpha = 1.0
-            self.seconds.textColor = .white
-        })
+        UIView.transition(with: seconds, duration: 0.5, options: .transitionCrossDissolve, animations: {
+            self.seconds.font = self.seconds.font.withSize(25)
+        }) { isFinished in
+            UIView.transition(with: self.seconds, duration: 0.5, options: .transitionCrossDissolve, animations: {
+                self.seconds.font = self.seconds.font.withSize(20)
+            })
+        }
     }
 }
 
