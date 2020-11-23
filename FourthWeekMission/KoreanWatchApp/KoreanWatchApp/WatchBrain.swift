@@ -75,9 +75,11 @@ class WatchBrain {
     func isCorrectHour(_ value: Int) -> Bool {
         switch value {
         case 20: return true
-        case 0: return hour % 12 == 24 ? true : false
+        case 0: return hour == 0 ? true : false
         case 10: return hour % 12 >= 10 ? true : false
         case 56: return hour % 12 == 5 || hour % 12 == 6 ? true : false
+        case 1: return hour % 12 == 1 || hour == 11
+        case 2: return hour % 12 == 2 || hour == 12
         default: return value == hour % 12 ? true : false
         }
     }
