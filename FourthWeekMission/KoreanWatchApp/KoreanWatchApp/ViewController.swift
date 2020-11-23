@@ -12,9 +12,11 @@ class ViewController: UIViewController {
     @IBOutlet var seconds: UILabel!
     @IBOutlet var verticalStackView: UIStackView!
     override func viewDidLoad() {
+        let clock = DispatchWorkItem {
+            _ = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.callback), userInfo: nil, repeats: true)
+        }
         
-        _ = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.callback), userInfo: nil, repeats: true)
-        
+        DispatchQueue.main.async(execute: clock)
     }
     
     var brain = WatchBrain()
