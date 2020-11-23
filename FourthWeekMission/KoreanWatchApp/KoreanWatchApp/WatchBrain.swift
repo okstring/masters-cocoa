@@ -1,19 +1,26 @@
 import Foundation
 
 class WatchBrain {
-    private var month = 0
-    private var day = 0
-    private var hour = 0
-    private var minutes = 0
-    private var seconds = 0
+    private var hour: Int
+    private var minutes: Int
+    private var seconds: Int
     private var rawTag = 0
     private var units = ["", "일", "이", "삼", "사", "오", "육", "칠", "팔", "구", "십"]
+    
+    init() {
+        let date = Date()
+        let calendar = NSCalendar.current
+        
+        self.hour = calendar.component(.hour, from: date)
+        self.minutes = calendar.component(.minute, from: date)
+        self.seconds = calendar.component(.second, from: date)
+    }
     
     enum TimeType {
         case DayOrNight(Int)
         case Hour(Int)
         case Minute(Int)
-        case Second(Int)
+        case Second
         case DayOrNightEmoji
         case none
     }
@@ -24,24 +31,16 @@ class WatchBrain {
             case 1: return TimeType.DayOrNight(rawTag % 100)
             case 2: return TimeType.Hour(rawTag % 100)
             case 3: return TimeType.Minute(rawTag % 100)
-            case 4: return TimeType.Second(rawTag % 100)
+            case 4: return TimeType.DayOrNightEmoji
+            case 5: return TimeType.Second
             default: return TimeType.none
             }
         }
     }
     
-    func currntTime() {
-        let date = Date()
-        let calendar = NSCalendar.current
-        
-        hour = calendar.component(.hour, from: date)
-        minutes = calendar.component(.minute, from: date)
-        seconds = calendar.component(.second, from: date)
-    }
     
-    func isThisLableCurrentTime(_ tag: Int) -> Bool {
+    func isThisLabelCurrentTime(_ tag: Int) -> Bool {
         rawTag = tag
-        currntTime()
         
         switch classifiedTag {
         case .DayOrNight(let value): return isDayOrNightNow(value)
@@ -50,6 +49,17 @@ class WatchBrain {
         default: break
         }
         return false
+    }
+    
+    func showStrLabelCurrentTime(_ tag: Int) -> String {
+        rawTag = tag
+        
+        switch classifiedTag {
+        case .DayOrNightEmoji: return showDayOrNightEmoji()
+        case .Second: return showCurrentSeconds()
+        default: break
+        }
+        return ""
     }
     
     func isDayOrNightNow(_ value: Int) -> Bool {
