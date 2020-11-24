@@ -41,7 +41,6 @@ class WatchBrain {
     
     func isThisLabelCurrentTime(_ tag: Int) -> Bool {
         rawTag = tag
-        
         switch classifiedTag {
         case .DayOrNight(let value): return isDayOrNightNow(value)
         case .Hour(let value): return isCorrectHour(value)
@@ -53,7 +52,6 @@ class WatchBrain {
     
     func showStrLabelCurrentTime(_ tag: Int) -> String {
         rawTag = tag
-        
         switch classifiedTag {
         case .DayOrNightEmoji: return showDayOrNightEmoji()
         case .Second: return showCurrentSeconds()
@@ -66,17 +64,15 @@ class WatchBrain {
         switch value {
         case 0: return true
         case 1: return hour >= 0 && hour <= 12 ? true : false
-        case 2: return hour >= 13 && hour <= 23 ? true : false
-        default: break
+        default: return hour >= 13 && hour <= 23 ? true : false
         }
-        return false
     }
     
     func isCorrectHour(_ value: Int) -> Bool {
         switch value {
         case 20: return true
         case 0: return hour == 0 ? true : false
-        case 10: return hour % 12 >= 10 ? true : false
+        case 10: return (hour >= 10 && hour <= 12) || (hour >= 22 && hour <= 23) ? true : false
         case 56: return hour % 12 == 5 || hour % 12 == 6 ? true : false
         case 1: return hour % 12 == 1 || hour == 11
         case 2: return hour % 12 == 2 || hour == 12
