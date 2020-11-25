@@ -23,6 +23,7 @@ print(String(repeating: "-", count: 15))
 
 var generateMultipleThread = GenerateMultipleThreads()
 generateMultipleThread.readBook(by: "bookfile.txt")
-generateMultipleThread.usedDispatchQueue()
 generateMultipleThread.unusedDispatchQueue()
+print("---")
+generateMultipleThread.usedDispatchQueue()
 RunLoop.main.run()
