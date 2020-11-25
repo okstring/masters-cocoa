@@ -15,6 +15,5 @@ struct ExploreFile {
         let fileManager = FileManager.default
         let path = URL(fileURLWithPath: path).appendingPathComponent(filename).path
         return fileManager.fileExists(atPath: path)
-        
     }
 }

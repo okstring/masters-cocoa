@@ -1,14 +1,10 @@
 import Foundation
 
-
-
 let exploreFile = ExploreFile()
 print(exploreFile.files(at: "/Users/maylily/Desktop"))
 print(exploreFile.isExist(filename: "Hi.csv", at: "/Users/maylily/Desktop"))
 
-
-
-
+print(String(repeating: "-", count: 15))
 
 var masters = """
 name, email, language, grade
@@ -23,13 +19,10 @@ print(csvManager.findBy(name: "Issac"))
 print(csvManager.removeBy(email: "head@codesquad.kr"))
 print(csvManager.write(to: "Hi"))
 
-
-
-
-
+print(String(repeating: "-", count: 15))
 
 var generateMultipleThread = GenerateMultipleThreads()
 generateMultipleThread.readBook(by: "bookfile.txt")
-generateMultipleThread.threadless()
+generateMultipleThread.useMain()
 generateMultipleThread.useThread()
 RunLoop.main.run()
