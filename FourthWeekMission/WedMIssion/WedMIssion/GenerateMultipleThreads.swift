@@ -16,7 +16,6 @@ class GenerateMultipleThreads {
         }
     }
     private func findWords(of word: String) {
-        
         countWords[word] = self.book.components(separatedBy: word).count - 1
     }
 
