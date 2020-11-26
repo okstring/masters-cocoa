@@ -17,7 +17,7 @@ var csvManager = CommaSeperatedValue(of: masters)
 csvManager.add(name: "Issac", email: "okstring@kakao.com", language: "swift", grade: 1)
 print(csvManager.findBy(name: "Issac"))
 print(csvManager.removeBy(email: "head@codesquad.kr"))
-print(csvManager.write(to: "Hi"))
+print(csvManager.write(to: "HiHello"))
 
 print(String(repeating: "-", count: 15))
 

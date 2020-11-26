@@ -43,16 +43,27 @@ struct CommaSeperatedValue {
         return false
     }
 
-    func write(to file: String) -> Bool {
+    mutating func write(to file: String) -> Bool {
         let desktopPath = "/Users/maylily/Desktop"
         let desktopPathURL = URL.init(fileURLWithPath: "/Users/maylily/Desktop")
         let csvPath = "\(file).csv"
+        var value = ""
+        
+        if let lastRow = csvData.last {
+            value += lastRow.keys.joined(separator: ", ") + "\n"
+        }
+        for row in csvData {
+            for (index, col) in row.values.enumerated() {
+                value += index == row.values.count - 1 ? "\(col)" : "\(col), "
+            }
+            value += "\n"
+        }
         
         do {
             let exploreFile = ExploreFile()
             if exploreFile.isExist(filename: csvPath, at: desktopPath) { return false }
-
-            try self.rawData.write(to: desktopPathURL.appendingPathComponent(csvPath), atomically: false, encoding: .utf8)
+            
+            try value.write(to: desktopPathURL.appendingPathComponent(csvPath), atomically: false, encoding: .utf8)
             return true
             
         } catch let error as NSError {
